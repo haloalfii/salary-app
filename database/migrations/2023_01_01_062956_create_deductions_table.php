@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('deductions', function (Blueprint $table) {
             $table->id();
             $table->string('deductions_code');
-            $table->integer('base_deductions');
             $table->integer('presence_deductions');
             $table->timestamps();
         });
