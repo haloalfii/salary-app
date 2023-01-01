@@ -15,7 +15,8 @@ class DepartmentController extends Controller
     public function index()
     {
         return view('department.index', [
-            'title' => 'Department'
+            'title' => 'Department',
+            'department' => Department::all()
         ]);
     }
 
@@ -39,7 +40,13 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'code' => 'required|unique:department',
+            'department_name' => 'required',
+        ]);
+
+        Department::create($validateData);
+        return redirect('/department')->with('success', 'New post has been added!');
     }
 
     /**
@@ -84,6 +91,7 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
-        //
+        Department::destroy($department->id);
+        return redirect('/department')->with('success', 'Post has been deleted!');
     }
 }

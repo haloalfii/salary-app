@@ -7,6 +7,48 @@
             <h1 class="h3 mb-0 text-gray-800">{{ $title }}</h1>
         </div>
 
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Add Departement Data</h6>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/department">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="code" class="form-label">Department Code</label>
+                        <input type="text"
+                            class="form-control @error('code')
+                                is-invalid
+                            @enderror"
+                            id="code" name="code" autofocus value="{{ old('code') }}">
 
+                        @error('code')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="department_name" class="form-label">Department Name</label>
+                        <input type="text"
+                            class="form-control @error('department_name')
+                                is-invalid
+                            @enderror"
+                            id="department_name" name="department_name" autofocus value="{{ old('department_name') }}">
+
+                        @error('department_name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 @endsection

@@ -2537,15 +2537,15 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #2e59d9;
-    border-color: #2653d4;
+    background-color: #112D4E;
+    border-color: #112D4E;
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
     color: #fff;
-    background-color: #2e59d9;
-    border-color: #2653d4;
+    background-color: #112D4E;
+    border-color: #112D4E;
     box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
 
@@ -10904,7 +10904,7 @@ a:focus {
 }
 
 .sidebar .sidebar-brand .sidebar-brand-icon i {
-    font-size: 2rem;
+    font-size: 20px;
 }
 
 .sidebar .sidebar-brand .sidebar-brand-text {
@@ -11003,7 +11003,7 @@ a:focus {
         content: "\f105";
     }
     .sidebar .sidebar-brand .sidebar-brand-icon i {
-        font-size: 2rem;
+        font-size: 20px;
     }
     .sidebar .sidebar-brand .sidebar-brand-text {
         display: inline;
@@ -11061,7 +11061,7 @@ a:focus {
         display: none;
     }
     .sidebar.toggled .sidebar-brand .sidebar-brand-icon i {
-        font-size: 2rem;
+        font-size: 20px;
     }
     .sidebar.toggled .sidebar-brand .sidebar-brand-text {
         display: none;

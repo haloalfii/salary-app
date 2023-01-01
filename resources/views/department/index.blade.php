@@ -23,7 +23,25 @@
                             </tr>
                         </thead>
 
-                        <tbody></tbody>
+                        <tbody>
+                            @foreach ($department as $item)
+                                <tr>
+                                    <td>{{ $item->code }}</td>
+                                    <td>{{ $item->department_name }}</td>
+                                    <td><a class="btn btn-warning btn-sm" href="/department/{{ $item->id }}/edit"><i
+                                                class="fas fa-pen"></i></a>
+                                        <form action="/department/{{ $item->id }}" method="POST" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Are you sure?')"><i
+                                                    class="fas fa-pen"></i></button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
