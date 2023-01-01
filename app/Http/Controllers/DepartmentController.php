@@ -14,7 +14,10 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('department.index', [
+            'title' => 'Department',
+            'department' => Department::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('department.create', [
+            'title' => 'Add Department'
+        ]);
     }
 
     /**
@@ -35,7 +40,18 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'code' => 'required|unique:department',
+            'department_name' => 'required',
+        ]);
+
+        $notification = array(
+            'message' => 'Department created successfully!',
+            'alert-type' => 'success'
+        );
+
+        Department::create($validateData);
+        return redirect('/department')->with($notification);
     }
 
     /**
@@ -57,7 +73,11 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department)
     {
-        //
+        // dd($dep)
+        return view('department.edit', [
+            'title' => 'Edit Department',
+            'department' => $department
+        ]);
     }
 
     /**
@@ -69,7 +89,21 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
-        //
+        // dd($request->department_name);
+        $validateData = $request->validate([
+            'code' => 'required',
+            'department_name' => 'required',
+        ]);
+
+        Department::where('id', $department->id)
+            ->update($validateData);
+
+        $notification = array(
+            'message' => 'Department data has been edited!',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/department')->with($notification);
     }
 
     /**
@@ -80,6 +114,12 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
-        //
+        Department::destroy($department->id);
+
+        $notification = array(
+            'message' => 'Department has been deleted!',
+            'alert-type' => 'error'
+        );
+        return redirect('/department')->with($notification);
     }
 }
