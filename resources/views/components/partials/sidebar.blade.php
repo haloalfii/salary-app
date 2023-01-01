@@ -1,6 +1,6 @@
         <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-money-bill"></i>
                 </div>
@@ -12,7 +12,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -53,7 +53,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Salary Data:</h6>
                         <a class="collapse-item" href="/salary">Salary</a>
-                        <a class="collapse-item" href="utilities-border.html">Deduction</a>
+                        <a class="collapse-item" href="/deduction">Deduction</a>
                     </div>
                 </div>
             </li>
