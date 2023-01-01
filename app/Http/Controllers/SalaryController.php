@@ -14,7 +14,10 @@ class SalaryController extends Controller
      */
     public function index()
     {
-        //
+        return view('salary.index', [
+            'title' => 'Salary',
+            'salary' => Salary::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class SalaryController extends Controller
      */
     public function create()
     {
-        //
+        return view('salary.create', [
+            'title' => 'Add Salary'
+        ]);
     }
 
     /**
@@ -35,7 +40,19 @@ class SalaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'salary_code' => 'required|unique:salaries',
+            'base_salary' => 'required',
+            'presence_salary' => 'required'
+        ]);
+
+        $notification = array(
+            'message' => 'Salary Data created successfully!',
+            'alert-type' => 'success'
+        );
+
+        Salary::create($validateData);
+        return redirect('/salary')->with($notification);
     }
 
     /**
@@ -57,7 +74,10 @@ class SalaryController extends Controller
      */
     public function edit(Salary $salary)
     {
-        //
+        return view('salary.edit', [
+            'title' => 'Edit Salary',
+            'salary' => $salary
+        ]);
     }
 
     /**
@@ -69,7 +89,21 @@ class SalaryController extends Controller
      */
     public function update(Request $request, Salary $salary)
     {
-        //
+        $validateData = $request->validate([
+            'salary_code' => 'required',
+            'base_salary' => 'required',
+            'presence_salary' => 'required'
+        ]);
+
+        Salary::where('id', $salary->id)
+            ->update($validateData);
+
+        $notification = array(
+            'message' => 'Salary data has been edited!',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/salary')->with($notification);
     }
 
     /**
@@ -80,6 +114,12 @@ class SalaryController extends Controller
      */
     public function destroy(Salary $salary)
     {
-        //
+        Salary::destroy($salary->id);
+
+        $notification = array(
+            'message' => 'Salary Data has been deleted!',
+            'alert-type' => 'error'
+        );
+        return redirect('/salary')->with($notification);
     }
 }
