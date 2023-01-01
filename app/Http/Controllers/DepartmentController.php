@@ -73,7 +73,11 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department)
     {
-        //
+        // dd($dep)
+        return view('department.edit', [
+            'title' => 'Edit Department',
+            'department' => $department
+        ]);
     }
 
     /**
@@ -85,7 +89,21 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
-        //
+        // dd($request->department_name);
+        $validateData = $request->validate([
+            'code' => 'required',
+            'department_name' => 'required',
+        ]);
+
+        Department::where('id', $department->id)
+            ->update($validateData);
+
+        $notification = array(
+            'message' => 'Department data has been edited!',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/department')->with($notification);
     }
 
     /**
