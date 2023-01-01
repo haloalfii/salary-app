@@ -45,8 +45,13 @@ class DepartmentController extends Controller
             'department_name' => 'required',
         ]);
 
+        $notification = array(
+            'message' => 'Department created successfully!',
+            'alert-type' => 'success'
+        );
+
         Department::create($validateData);
-        return redirect('/department')->with('success', 'New post has been added!');
+        return redirect('/department')->with($notification);
     }
 
     /**
@@ -92,6 +97,11 @@ class DepartmentController extends Controller
     public function destroy(Department $department)
     {
         Department::destroy($department->id);
-        return redirect('/department')->with('success', 'Post has been deleted!');
+
+        $notification = array(
+            'message' => 'Department has been deleted!',
+            'alert-type' => 'error'
+        );
+        return redirect('/department')->with($notification);
     }
 }

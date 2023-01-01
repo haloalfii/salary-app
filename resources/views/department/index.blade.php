@@ -35,7 +35,7 @@
                                             @csrf
                                             <button class="btn btn-danger btn-sm"
                                                 onclick="return confirm('Are you sure?')"><i
-                                                    class="fas fa-pen"></i></button>
+                                                    class="fas fa-trash"></i></button>
                                         </form>
                                     </td>
 
