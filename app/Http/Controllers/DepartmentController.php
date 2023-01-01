@@ -14,7 +14,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('department.index', [
+            'title' => 'Department'
+        ]);
     }
 
     /**
@@ -24,7 +26,9 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('department.create', [
+            'title' => 'Add Department'
+        ]);
     }
 
     /**

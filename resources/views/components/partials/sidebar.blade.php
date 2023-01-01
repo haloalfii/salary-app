@@ -36,7 +36,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data:</h6>
                         <a class="collapse-item" href="buttons.html">Employee Data</a>
-                        <a class="collapse-item" href="cards.html">Departement Data</a>
+                        <a class="collapse-item" href="/department">Departement Data</a>
                     </div>
                 </div>
             </li>
