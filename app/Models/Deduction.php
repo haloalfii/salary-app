@@ -13,8 +13,8 @@ class Deduction extends Model
         'id'
     ];
 
-    public function employee_deduction()
+    public function employee_salary()
     {
-        return $this->hasMany(EmployeeDeduction::class);
+        return $this->hasMany(EmployeeSalary::class);
     }
 }
