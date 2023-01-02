@@ -22,9 +22,4 @@ class Employee extends Model
     {
         return $this->hasMany(EmployeeSalary::class);
     }
-
-    public function emp_deduction()
-    {
-        return $this->hasMany(EmployeeDeduction::class);
-    }
 }
