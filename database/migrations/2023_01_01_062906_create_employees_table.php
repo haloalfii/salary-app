@@ -16,13 +16,11 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->foreignId('department_id');
-            $table->foreignId('emp_salary_id');
-            $table->foreignId('emp_deduction_id');
             $table->string('nik')->unique();
             $table->string('full_name');
             $table->string('nick_name');
             $table->string('gender');
-            $table->string('addess')->nullable();
+            $table->string('address')->nullable();
             $table->string('phone');
             $table->timestamps();
         });

@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeductionController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SalaryController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,4 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::resource('department', DepartmentController::class);
 Route::resource('salary', SalaryController::class);
 Route::resource('deduction', DeductionController::class);
+Route::resource('employee', EmployeeController::class);
