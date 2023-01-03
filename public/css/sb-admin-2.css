@@ -478,6 +478,11 @@ mark,
     background-color: #fcf8e3;
 }
 
+.bg-auth {
+    background-image: url("/img/bg-auth.png");
+    background-position: center;
+}
+
 .list-unstyled {
     padding-left: 0;
     list-style: none;
@@ -2537,15 +2542,15 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #112D4E;
-    border-color: #112D4E;
+    background-color: #112d4e;
+    border-color: #112d4e;
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
     color: #fff;
-    background-color: #112D4E;
-    border-color: #112D4E;
+    background-color: #112d4e;
+    border-color: #112d4e;
     box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
 
