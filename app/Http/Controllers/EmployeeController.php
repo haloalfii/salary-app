@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,10 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        return view('employee.index', [
+            'title' => 'Employee Data',
+            'employees' => Employee::all()
+        ]);
     }
 
     /**
@@ -24,7 +28,10 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employee.create', [
+            'title' => 'Add Employee Data',
+            'department' => Department::all()
+        ]);
     }
 
     /**
@@ -35,7 +42,23 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'department_id' => 'required',
+            'nik' => 'required',
+            'full_name' => 'required',
+            'nick_name' => 'required',
+            'gender' => 'required',
+            'address' => '',
+            'phone' => 'required',
+        ]);
+
+        $notification = array(
+            'message' => 'Employee created successfully!',
+            'alert-type' => 'success'
+        );
+
+        Employee::create($validateData);
+        return redirect('/employee')->with($notification);
     }
 
     /**
@@ -57,7 +80,11 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('employee.edit', [
+            'title' => 'Edit Employee Data',
+            'department' => Department::all(),
+            'employee' => $employee
+        ]);
     }
 
     /**
@@ -69,7 +96,25 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        //
+        $validateData = $request->validate([
+            'department_id' => 'required',
+            // 'nik' => 'required',
+            'full_name' => 'required',
+            'nick_name' => 'required',
+            'gender' => 'required',
+            'address' => '',
+            'phone' => 'required',
+        ]);
+
+        Employee::where('id', $employee->id)
+            ->update($validateData);
+
+        $notification = array(
+            'message' => 'Employee data has been edited!',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/employee')->with($notification);
     }
 
     /**
@@ -80,6 +125,13 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        // dd($employee->id);
+        Employee::destroy($employee->id);
+
+        $notification = array(
+            'message' => 'Employee has been deleted!',
+            'alert-type' => 'error'
+        );
+        return redirect('/employee')->with($notification);
     }
 }
