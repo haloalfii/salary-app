@@ -15,11 +15,16 @@ class EmployeeSalary extends Model
 
     public function salary()
     {
-        return $this->belongsTo(Salary::class);
+        return $this->belongsTo(Salary::class, 'salary_id');
     }
 
     public function salary_emp()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class, 'emp_id');
+    }
+
+    public function deduction_emp()
+    {
+        return $this->belongsTo(Deduction::class, 'deduction_id');
     }
 }
