@@ -27,7 +27,12 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
 
-        return back()->with('loginError', 'Login failed');
+        $notification = array(
+            'message' => 'Login Error, Email and Password invalid!',
+            'alert-type' => 'error'
+        );
+
+        return back()->with($notification);
     }
 
     public function logout(Request $request)

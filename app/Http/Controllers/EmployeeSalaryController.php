@@ -59,10 +59,12 @@ class EmployeeSalaryController extends Controller
         $inputData->deduction_id = $request->deduction_id;
         $inputData->emp_id = $request->emp_id;
         $inputData->period = $request->period;
+        $inputData->period_effective = $request->period_effective;
         $inputData->emp_presence = $request->emp_presence;
         $inputData->emp_non_presence = $request->emp_non_presence;
-        $inputData->total = $baseSalary + ($basePresent * $request->emp_presence);
-        $inputData->total_after_deduction = ($baseSalary + ($basePresent * $request->emp_presence)) - ($PresentDeduction * $request->emp_non_presence);
+        $inputData->emp_leave = $request->emp_leave;
+        $inputData->total = $baseSalary + ($basePresent * $request->period_effective);
+        $inputData->total_after_deduction = ($baseSalary + ($basePresent * $request->period_effective)) - ($PresentDeduction * $request->emp_non_presence);
 
         $inputData->save();
 
