@@ -75,6 +75,21 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="period_effective" class="form-label">Effective Days</label>
+                        <input type="number"
+                            class="form-control @error('period_effective')
+                                is-invalid
+                            @enderror"
+                            id="period_effective" name="period_effective" autofocus value="{{ old('period_effective') }}">
+
+                        @error('period_effective')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
                         <label for="emp_presence" class="form-label">Present</label>
                         <input type="number"
                             class="form-control @error('emp_presence')
@@ -98,6 +113,21 @@
                             id="emp_non_presence" name="emp_non_presence" autofocus value="{{ old('emp_non_presence') }}">
 
                         @error('emp_non_presence')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="emp_leave" class="form-label">Employee Leave</label>
+                        <input type="number"
+                            class="form-control @error('emp_leave')
+                                is-invalid
+                            @enderror"
+                            id="emp_leave" name="emp_leave" autofocus value="{{ old('emp_leave') }}">
+
+                        @error('emp_leave')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

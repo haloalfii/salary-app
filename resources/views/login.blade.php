@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="row" style="height: 100vh">
-        <div class="col-md-8 bg-auth"></div>
-        <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <div class="col-lg-8 d-none d-lg-block bg-auth"></div>
+        <div class="col-lg-4 col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
             <div class="card o-hidden shadow-sm " style="width: 340px">
                 <div class="card-body p-0">
                     <div class="" style="padding: 32px">
@@ -47,7 +47,8 @@
                         </form>
                         <hr>
                         <div class="text-center">
-                            <a class="small" href="/register">Doesn't have an account? Register!</a>
+                            <p class="mb-0 text-muted small">PT Raharjo Strategi Partner</p>
+                            {{-- <a class="small" href="/register">Doesn't have an account? Register!</a> --}}
                         </div>
                     </div>
                 </div>
