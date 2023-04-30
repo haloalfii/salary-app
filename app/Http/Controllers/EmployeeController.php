@@ -44,7 +44,7 @@ class EmployeeController extends Controller
     {
         $validateData = $request->validate([
             'department_id' => 'required',
-            'nik' => 'required',
+            'nik' => 'required|unique:employees',
             'full_name' => 'required',
             'nick_name' => 'required',
             'gender' => 'required',

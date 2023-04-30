@@ -8,7 +8,7 @@
             <p>Selamat datang di Salary Web Apps yang akan memudahkan user untuk menghitung gaji karyawan</p>
         </div>
         <div class="row" style="height: 400px">
-            <div class="col-md-6 h-100">
+            <div class="col-md-6 mb-3 h-100">
                 <div class="card shadow mb-4 h-100">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Dashboard</h6>
@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3 h-100">
+            <div class="col-md-3 mb-3 h-100">
                 <div class="card shadow mb-4 h-100">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Company Employees</h6>
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3 h-100">
+            <div class="col-md-3 mb-3 h-100">
                 <div class="card shadow mb-4 h-100">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Employee Gender</h6>
