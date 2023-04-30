@@ -21,8 +21,10 @@
                                 <th>Salary Class</th>
                                 <th>Deduction Class</th>
                                 <th>Period</th>
+                                <th>Effective Day</th>
                                 <th>Present</th>
                                 <th>Not Present</th>
+                                <th>Leave</th>
                                 <th>Total</th>
                                 <th>Salary Cuts</th>
                                 <th>Total After Deduction</th>
@@ -37,8 +39,10 @@
                                     <td>{{ $item->salary->salary_code }}</td>
                                     <td>{{ $item->deduction_emp->deductions_code }}</td>
                                     <td>{{ \Carbon\Carbon::parse($item->period)->format('M Y') }}</td>
+                                    <td>{{ $item->period_effective }}</td>
                                     <td>{{ $item->emp_presence }}</td>
                                     <td>{{ $item->emp_non_presence }}</td>
+                                    <td>{{ $item->emp_leave }}</td>
                                     <td>Rp. {{ number_format($item->total, 2, ',', '.') }}</td>
                                     <td>Rp. {{ number_format($item->total - $item->total_after_deduction, 2, ',', '.') }}
                                     </td>

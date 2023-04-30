@@ -19,8 +19,10 @@ return new class extends Migration
             $table->foreignId('deduction_id');
             $table->foreignId('emp_id');
             $table->string('period');
+            $table->integer('period_effective');
             $table->integer('emp_presence');
             $table->integer('emp_non_presence');
+            $table->integer('emp_leave');
             $table->integer('total');
             $table->integer('total_after_deduction');
             $table->timestamps();
